@@ -8,9 +8,9 @@ const NavBar = props => {
     const navigation = useNavigation();
     return (
         <View style={styles.navBar}>
-            <View style={styles.button}><TouchableOpacity onPress={() => { navigation.navigate('Add') }}><Text style={{ textAlign: 'center', }}>Add</Text></TouchableOpacity></View>
-            <View style={styles.button}><TouchableOpacity onPress={() => { navigation.navigate('History') }}><Text style={{ textAlign: 'center', }}>History</Text></TouchableOpacity></View>
-            <View style={styles.button}><TouchableOpacity onPress={() => { navigation.navigate('Account') }}><Text style={{ textAlign: 'center', }}>Account</Text></TouchableOpacity></View>
+            <TouchableOpacity style={styles.button} onPress={() => { navigation.navigate('Add') }}><Text style={{ textAlign: 'center', }}>Add</Text></TouchableOpacity>
+            <TouchableOpacity style={styles.button} onPress={() => { navigation.navigate('History') }}><Text style={{ textAlign: 'center', }}>History</Text></TouchableOpacity>
+            <TouchableOpacity style={styles.button} onPress={() => { navigation.navigate('Account') }}><Text style={{ textAlign: 'center', }}>Account</Text></TouchableOpacity>
         </View>
     );
 }

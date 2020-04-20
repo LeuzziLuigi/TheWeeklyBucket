@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView, TextInput, TouchableOpacity, FlatList, Button } from 'react-native';
+import { View, Text, StyleSheet, Button, TouchableOpacity, FlatList } from 'react-native';
 
 
 import { GOALS } from '../data/dataCategories';
@@ -11,10 +11,10 @@ const Add = props => {
         return (
             <TouchableOpacity
                 //style = {}
-                //onPress = {() => {}}
+                onPress={() => {props.navigation.navigate('Search', {category: itemData.item.category})}}
             >
                 <View style={styles.goalContainer}>
-                    <GoalCard category={itemData.item.category}>
+                    <GoalCard category={itemData.item.img}>
                         <Text style={styles.text}>{itemData.item.title}</Text>
                     </GoalCard>
                 </View>
@@ -24,7 +24,9 @@ const Add = props => {
 
     return (
         <View>
-            <TextInput style={styles.search} placeholder="search by keyword" />
+            <TouchableOpacity style={styles.searchContainer} onPress={() => props.navigation.navigate('Search', {category: null})}>
+                <Text style={styles.search}>  Search by Keyword Instead  </Text>    
+            </TouchableOpacity> 
             <FlatList
                 numColumns={2}
                 data={GOALS}
@@ -46,12 +48,11 @@ const styles = StyleSheet.create({
         fontSize: 22,
         fontWeight: 'bold',
     },
-    search: {
+    searchContainer: {
         alignSelf: 'center',
-        backgroundColor: 'white',
-        width: '100%',
-        textAlign: 'center',
-        borderWidth: 1,
+        backgroundColor: '#A8A8A8',
+        borderRadius: 10,
+        marginTop: 10,
     },
     grid: {
         flex: 1,

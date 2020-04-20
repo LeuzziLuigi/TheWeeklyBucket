@@ -10,6 +10,7 @@ import Header from './components/Header';
 import Main from './screens/Main';
 import Add from './screens/Add';
 import Account from './screens/Account';
+import Search from './screens/Search';
 
 const Stack = createStackNavigator();
 
@@ -29,6 +30,7 @@ export default function App() {
         <Stack.Screen name="Main" component={Main} />
         <Stack.Screen name="Add" component={Add} />
         <Stack.Screen name="Account" component={Account} />
+        <Stack.Screen name="Search" component={Search} />
       </Stack.Navigator>
     </NavigationContainer>
   );
