@@ -5,7 +5,7 @@ class Goal {
         this.category = category;
         this.img = img;
         this.counter = counter;
-        maxCounter = counter;
+        this.maxCounter = counter;
     }
 }
 
